@@ -19,7 +19,6 @@ import { ActivatedRoute } from '@angular/router';
         patrick@AngularClass.com
       </h3>
     </div>
-    <pre>this.localState = {{ localState | json }}</pre>
   `
 })
 export class AboutComponent implements OnInit {

@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,200');
+html,
+body {
+    height: 100%;
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    flex: 1 0 auto;
+}
+
+main {
+    min-height: 100%;
+}
+
+nav {
+    margin: 0;
+    padding-top: 50px;
+}
+
+home,
+router-outlet {
+    min-height: 100%;
+    display: block;
+}
+
+button,
+input {
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}
+
+input,
+textarea {
+    outline: none;
+}
+
+a.active {
+    background-color: gray;
+}
+
+.form-control {
+    border-radius: 0px;
+}

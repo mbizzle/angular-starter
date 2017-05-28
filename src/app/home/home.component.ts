@@ -2,10 +2,17 @@ import {
   Component,
   OnInit
 } from '@angular/core';
-
+import { Observable } from 'rxjs/Observable';
+import { NgbTypeaheadConfig } from '@ng-bootstrap/ng-bootstrap';
 import { AppState } from '../app.service';
 import { Title } from './title';
 import { XLargeDirective } from './x-large';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';
+
+// tslint:disable-next-line:max-line-length
+const places = ['Aspen', 'Berlin', 'Beverly Hills', 'Cabo San Lucas', 'Cannes', 'Como', 'Cotswolds', 'Gstaad', 'London', 'Manhattan', 'Marbella', 'Miami', 'Mustique', 'Paris', 'San Francisco', 'Tuscany'];
 
 @Component({
   /**
@@ -23,7 +30,7 @@ import { XLargeDirective } from './x-large';
   /**
    * Our list of styles in our component. We may add more to compose many styles together.
    */
-  styleUrls: [ './home.component.css' ],
+  styleUrls: [ './home.component.scss' ],
   /**
    * Every Angular template is first compiled by the browser before Angular runs it's compiler.
    */
@@ -33,14 +40,16 @@ export class HomeComponent implements OnInit {
   /**
    * Set our default values
    */
-  public localState = { value: '' };
+  public destination: any;
+  public date: any;
   /**
    * TypeScript public modifiers
    */
   constructor(
-    public appState: AppState,
-    public title: Title
-  ) {}
+    config: NgbTypeaheadConfig
+  ) {
+    config.showHint = true;
+  }
 
   public ngOnInit() {
     console.log('hello `Home` component');
@@ -48,10 +57,14 @@ export class HomeComponent implements OnInit {
      * this.title.getData().subscribe(data => this.data = data);
      */
   }
+  public search = (text$: Observable<string>) =>
+    text$
+      .debounceTime(100)
+      .distinctUntilChanged()
+      .map((term) => term.length < 1 ? []
+        : places.filter((v) => v.toLowerCase().startsWith(term.toLocaleLowerCase())).splice(0, 10));
 
-  public submitState(value: string) {
-    console.log('submitState', value);
-    this.appState.set('value', value);
-    this.localState.value = '';
+  public submitState(dest: string, date: string) {
+    console.log('submitState', dest, date);
   }
 }

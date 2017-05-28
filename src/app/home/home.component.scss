@@ -1,0 +1,26 @@
+/*styles for home content only*/
+
+home {
+    height: 100%;
+}
+
+.home-content {
+    padding: 15px;
+    min-height: 100%;
+    flex-wrap: wrap;
+    h1 {
+        font-size: 45px !important;
+        text-transform: uppercase;
+    }
+    input {
+        font-size: 45px;
+        border-bottom: 2px solid #ccc;
+        border-right: none;
+        border-left: none;
+        border-top: none;
+        width: 100%;
+    }
+    .container.search {
+        align-self: center;
+    }
+}
