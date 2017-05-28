@@ -8,18 +8,43 @@ body {
 }
 
 main {
+    background-image: url('../assets/img/front.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     min-height: 100%;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
 
 nav {
     margin: 0;
-    padding-top: 50px;
+    position: fixed;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+    width: 100%;
+    a {
+        display: inline-block;
+        border-radius: 0;
+    }
 }
 
 home,
 router-outlet {
-    min-height: 100%;
-    display: block;
+    -webkit-box-flex: 0;
+    -webkit-flex: none;
+    -ms-flex: none;
+    flex: none;
+    max-width: 100%;
 }
 
 button,

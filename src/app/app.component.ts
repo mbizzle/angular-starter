@@ -19,12 +19,8 @@ import { AppState } from './app.service';
     './app.component.scss'
   ],
   template: `
-    <nav>
+    <nav class="nav">
       <a [routerLink]=" ['./'] "
-        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        Index
-      </a>
-      <a [routerLink]=" ['./home'] "
         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
         Home
       </a>
