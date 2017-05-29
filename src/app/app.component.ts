@@ -24,9 +24,9 @@ import { AppState } from './app.service';
         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
         Home
       </a>
-      <a [routerLink]=" ['./detail'] "
+      <a [routerLink]=" ['./destinations'] "
         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        Detail
+        Destinations
       </a>
       <a [routerLink]=" ['./barrel'] "
         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
@@ -37,7 +37,7 @@ import { AppState } from './app.service';
         About
       </a>
     </nav>
-
+    <div class="blur-bg"></div>
     <main>
       <router-outlet></router-outlet>
     </main>

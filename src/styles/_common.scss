@@ -1,5 +1,13 @@
 [role=listbox] {
     width: 100%;
+    border-radius: 0px;
+    margin-top: -2px;
+    padding: 0;
+    border: none;
+    button {
+        padding: 10px;
+        font-size: 2rem;
+    }
 }
 
 .input-group-addon {

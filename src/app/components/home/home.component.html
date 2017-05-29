@@ -10,7 +10,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="input-group">
-                            <input class="form-control" placeholder="WHEN?" name="dp" [(ngModel)]="date" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()">
+                            <input class="form-control" placeholder="WHEN?" name="dp" [(ngModel)]="date" ngbDatepicker #d="ngbDatepicker" (focus)="d.toggle()" (blur)="d.toggle()">
                             <div class="input-group-addon">
                                 <button class="btn btn-primary btn-tt">GO</button>
                             </div>

@@ -5,12 +5,10 @@ body {
     font-family: 'Raleway', Arial, Helvetica, sans-serif;
     font-weight: 100;
     flex: 1 0 auto;
+    background-color: #000;
 }
 
 main {
-    background-image: url('../assets/img/front.png');
-    background-size: cover;
-    background-repeat: no-repeat;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -24,11 +22,14 @@ main {
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
+    position: relative;
+    z-index: 1;
 }
 
 nav {
     margin: 0;
     position: fixed;
+    z-index: 3;
     background: #fff;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
     width: 100%;
@@ -38,13 +39,27 @@ nav {
     }
 }
 
-home,
-router-outlet {
+home {
+    position: relative;
+    z-index: 2;
     -webkit-box-flex: 0;
     -webkit-flex: none;
     -ms-flex: none;
     flex: none;
     max-width: 100%;
+}
+
+.blur-bg {
+    background-image: url('../assets/img/front.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #000;
+    filter: blur(5px);
+    height: 100%;
+    display: block;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
 }
 
 button,
